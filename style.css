@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d0caca;
+  border-radius: 10px;
+}
+
+#wrapper {
+  max-width: 1400px;
+  position: relative;
+}
+
+nav#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border-right: 1px solid #ebe3e3;
+}
+
+nav#sidebar .sidebar-head {
+  border-bottom: 1px solid #ebe3e3;
+  display: flex;
+  height: 65px;
+  padding-left: 20px;
+  align-items: center;
+}
+
+nav#sidebar .sidebar-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 65px);
+  padding: 10px 0px;
+  overflow: auto;
+
+}
+
+nav#sidebar .sidebar-body::-webkit-scrollbar {
+  width: 0;
+}
+
+nav#sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+nav#sidebar ul li {
+  list-style: none;
+}
+
+nav#sidebar ul li a {
+  text-decoration: none;
+  display: flex;
+  padding-left: 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4848;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+}
+
+
+
+nav#sidebar ul li a i {
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+nav#sidebar ul li a .icon_chevron {
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+nav#sidebar ul li a .icon_chevron.active {
+  transform: rotate(90deg);
+}
+
+nav#sidebar .sidebar-body ul li a.active {
+  background-color: #faf5f5;
+}
+
+nav#sidebar .sidebar-body ul li a:focus {
+  background-color: #faf5f5;
+}
+
+nav#sidebar .sidebar-body ul li a:hover {
+  background-color: #faf5f5;
+}
+
+.main-menu::before {
+  content: "Main menu";
+}
+
+.other-menu::before {
+  content: "Other menu";
+}
+
+.setting-menu::before {
+  content: "Help & Settings";
+}
+
+.main-menu::before,
+.other-menu::before,
+.setting-menu::before {
+  font-size: 13px;
+  padding: 5px 0px;
+  padding-top: 20px;
+  padding-left: 25px;
+  font-weight: 500;
+  color: rgb(167, 160, 160);
+}
+
+nav#sidebar .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+nav#sidebar .sub-menu li a {
+  font-size: 13.5px;
+}
+
+nav#sidebar .sub-menu.active {
+  max-height: 100px;
+}
+
+nav#sidebar .sub-menu li a span::before {
+  content: "-";
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
+
+#wp-content {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  position: absolute;
+  left: 250px;
+  background-color: rgb(254, 251, 251);
+}
+
+#header {
+  background-color: #fff;
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ebe3e3;
+}
+
+#header .search-bar {
+  width: 70%;
+  height: 40px;
+  position: relative;
+}
+
+#header .search-bar .search_icon {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #958989;
+}
+
+#header .search-bar input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0px 20px 0px 35px;
+}
+
+
+#content {
+  margin-top: 65px;
+  padding: 20px 15px;
+}
+
+#content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+#content p {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+  nav#sidebar {
+    left: -250px;
+    z-index: 100000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav#sidebar.active {
+    left: 0;
+  }
+
+  main#wp-content {
+    left: 0;
+    width: 100%;
+    text-align: justify;
+  }
+
+  header#header {
+    left: 0;
+  }
+
+  header#header .icon-menu {
+    font-size: 22px;
+  }
+
+  .icon-close {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+  }
+}
