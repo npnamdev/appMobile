@@ -224,7 +224,8 @@ nav#sidebar .sub-menu li a span::before {
 
 @media screen and (max-width: 576px) {
   nav#sidebar {
-    left: -250px;
+    width: 280px;
+    left: -280px;
     z-index: 10000;
     transition: all 0.3s ease-in-out;
   }
