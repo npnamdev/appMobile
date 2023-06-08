@@ -20,3 +20,8 @@ icon_close.addEventListener('click', () => {
     sidebar.classList.remove('active');
     overline.classList.remove('active');
 })
+
+overline.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overline.classList.remove('active');
+})
