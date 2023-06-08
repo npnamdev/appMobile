@@ -273,4 +273,19 @@ nav#sidebar .sub-menu li a span::before {
     opacity: 0.5;
     pointer-events: visible;
   }
+
+  #content {
+    padding: 25px 20px;
+  }
+
+  .demo {
+    border-radius: 5px;
+  }
+
+  .demo2 {
+    display: flex;
+    padding-top: 10px;
+    font-size: 14px;
+    justify-content: center;
+  }
 }
